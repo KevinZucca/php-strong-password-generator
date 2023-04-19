@@ -1,9 +1,14 @@
 <?php
 
+session_start(); 
+
 include __DIR__ . "/./partials/functions.php";
 
-$userPassword = $_GET["passwordCharacters"];
+
+$userPassword = $_GET["passwordCharacters"] ?? '';
 $charactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#?!=()/&%$£';
+
+$_SESSION["password"] = generatePassword($userPassword, $charactersList);
 
 ?>
 
@@ -18,12 +23,10 @@ $charactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 <body>
 
 <p>How many characters do you need?</p>
-<form action="index.php" method="GET">
+<form action="secondPage.php" method="GET">
     <input type="number" name="passwordCharacters" required>
     <input type="submit">
 </form>
-
-<p>Your password is: <br> <strong><?php echo generatePassword($userPassword, $charactersList); ?> </strong></p>
 
 
     
