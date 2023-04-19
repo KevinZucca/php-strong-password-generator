@@ -2,6 +2,7 @@
 
 session_start();
 
+
 ?>
 
 
@@ -18,9 +19,8 @@ session_start();
 
 <h1>That's your password</h1>
 
-<p><?php echo $_SESSION["password"]; ?></p>
 
+<p><?php echo$_SESSION["password"];?></p>
 
-    
 </body>
 </html>

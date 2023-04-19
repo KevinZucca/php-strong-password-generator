@@ -10,7 +10,10 @@ $charactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 
 $_SESSION["password"] = generatePassword($userPassword, $charactersList);
 
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,12 +26,12 @@ $_SESSION["password"] = generatePassword($userPassword, $charactersList);
 <body>
 
 <p>How many characters do you need?</p>
-<form action="secondPage.php" method="GET">
+<form action="index.php" method="GET">
     <input type="number" name="passwordCharacters" required>
     <input type="submit">
 </form>
 
+<a href="secondPage.php"> Check</a>
 
-    
 </body>
 </html>
